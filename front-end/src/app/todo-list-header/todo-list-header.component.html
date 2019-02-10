@@ -1,0 +1,12 @@
+<header class="header">
+  <h1>Shopping</h1>
+  <input class="new-todo" placeholder="What's in your mind?" name="taskDesc"  [(ngModel)]="newTodo.taskDesc"
+         (keyup.enter)="addTodo()" (keypress)="omit_special_char($event)" required maxlength="100" #taskDesc="ngModel" />
+  <div *ngIf="taskDesc.invalid && (taskDesc.dirty)"
+    class="alert alert-danger">
+  <div *ngIf="taskDesc.errors.maxlength">
+    Task must be less than 100 characters long.
+  </div>
+
+</div>
+</header>
